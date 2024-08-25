@@ -1,0 +1,157 @@
+:root {
+  --primary-color: #b67a62;
+  --secondary-color: white;
+  --font-family-text: "Inter";
+  --text-shadow: 5px 5px 10px rgba(69, 67, 69, 0.4);
+  --text-shadow-secondary: 5px 5px 10px rgba(242, 231, 242, 0.4);
+  --background-primary: rgba(182, 122, 98, 0.5);
+  --background-secondary: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  background-image: url(images/background.jpg);
+  font-family: var(--font-family-text);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  margin: 0;
+}
+
+.container {
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  color: var(--secondary-color);
+}
+
+/* header */
+.header {
+  margin: 10px auto;
+  padding: 25px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-time {
+  font-size: 65px;
+  text-shadow: var(--text-shadow);
+}
+
+#greetings {
+  text-shadow: var(--text-shadow);
+  margin: 4px 0;
+}
+
+/* input form */
+.input-form {
+  margin: 10px auto;
+  padding: 25px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#input-city {
+  padding: 15px;
+  font-size: 18px;
+  width: 78%;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-family: var(--font-family-text);
+  background-color: var(--background-secondary);
+  color: var(--secondary-color);
+  text-shadow: var(--text-shadow);
+}
+
+#input-city::placeholder {
+  color: var(--secondary-color);
+  text-shadow: var(--text-shadow);
+  opacity: 0.6;
+}
+
+.button {
+  background: var(--background-primary);
+  color: var(--secondary-color);
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  text-shadow: var(--text-shadow);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+/* current-weather */
+.weather {
+  margin-top: 35px;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 42%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.current-weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+small,
+#today {
+  font-size: 25px;
+}
+
+.current-weather {
+  display: flex;
+}
+
+.temperature {
+  display: flex;
+  padding-top: 12px;
+}
+
+.temp {
+  font-size: 55px;
+}
+
+.temp-unit {
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+#condition {
+  margin-left: 18px;
+}
+
+.weather-description {
+  display: flex;
+  margin-left: 18px;
+  gap: 20px;
+}
+
+.image-weather {
+  width: 88px;
+  height: 88px;
+}
+
+/* forecast */
+.forecast-weather-day {
+  display: flex;
+  gap: 50px;
+}
+
+.forecast-weather-temperature {
+  display: flex;
+  gap: 10px;
+  padding-left: 15px;
+}
+
+.day,
+#today {
+  text-align: center;
+}

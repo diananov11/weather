@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Diana V2</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script src="https://kit.fontawesome.com/ebaaa9c4bc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <header>
+        <div id="date-time" class="date-time"></div>
+        <p id="greetings"></p>
+      </header>
+      <div>
+        <h1 id="city"></h1>
+      </div>
+    </div>
+    <main>
+      <div class="input-form">
+        <form>
+          <input type="search" placeholder="Search city" name="input-city" id="input-city">
+          <input type="submit" value="Search" id="submit-button" class="button" onclick="searchButton(event)">
+          <button class="button" onclick="changeCurrent(event)">Your Location📍</button>
+        </form>
+      </div>
+      <div class="weather">
+        <div class="current-weather-container">
+          <div id="today"></div>
+          <div class="current-weather">
+            <div id="current-weather-img"></div>
+            <div class="temperature">
+              <div class="temp" id="temp"></div>
+              <div class="temp-unit">°C</div>
+            </div>
+          </div>
+          <div id="condition"></div>
+          <div class="weather-description">
+            <div id="wind"></div>
+            <div id="humidity"></div>
+          </div>
+        </div>
+        <div class="forecast-weather-day" id="forecast-weather-day"></div>
+      </div>
+  </div>
+  </main>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
