@@ -17,6 +17,10 @@ body {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 .container {
   border-radius: 50px;
   background-repeat: no-repeat;
