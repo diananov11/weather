@@ -26,14 +26,20 @@
       </header>
       <div>
         <h1 id="city"></h1>
+        <div class="toggleTemp">
+          <label class="switch">
+            <input type="checkbox" class="toggle">
+            <span class="slider round"><span style="color: white;">°C</span> °F</span>
+          </label>
+        </div>
       </div>
     </div>
     <main>
       <div class="input-form">
         <form>
-          <input type="search" placeholder="Search city" name="input-city" id="input-city">
+          <input type="search" placeholder="Search city" name="input-city" id="input-city" autocomplete="off">
           <input type="submit" value="Search" id="submit-button" class="button" onclick="searchButton(event)">
-          <button class="button" onclick="changeCurrent(event)">Your Location📍</button>
+          <button class="button hithere" onclick="changeCurrent(event)">Your Location📍</button>
         </form>
       </div>
       <div class="weather">
@@ -43,10 +49,11 @@
             <div id="current-weather-img"></div>
             <div class="temperature">
               <div class="temp" id="temp"></div>
-              <div class="temp-unit">°C</div>
+              <div class="temp-unit" id="temp-unit"></div>
             </div>
           </div>
-          <div id="condition"></div>
+          <div id="condition">
+          </div>
           <div class="weather-description">
             <div id="wind"></div>
             <div id="humidity"></div>

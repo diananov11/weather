@@ -1,4 +1,4 @@
-//greetings
+// greetings
 function greeting() {
   let nameUser = prompt("what is your name?");
   let p = document.getElementById("greetings");
@@ -6,7 +6,7 @@ function greeting() {
 }
 setTimeout(greeting, 1200);
 
-//set date-time
+// set date-time
 function dateTime() {
   let dateTime = document.getElementById("date-time");
   dateTime.innerHTML = moment().format(
@@ -14,6 +14,10 @@ function dateTime() {
   );
 }
 setInterval(dateTime, 1000);
+
+// DOM
+let currentTemp = document.getElementById("temp");
+let tempUnit = document.getElementById("temp-unit");
 
 //fetch API city
 async function displayCity(city) {
@@ -46,7 +50,7 @@ async function displayWeather(lat, lon) {
     );
     let data = await apiUrlLocation.json();
     let h1 = document.getElementById("city");
-    h1.innerHTML = data.name;
+    h1.innerHTML = `<i class="fa-solid fa-location-dot" style="color: #eb0f25;"></i> ${data.name}`;
 
     // inject today
     let today = document.getElementById("today");
@@ -69,9 +73,9 @@ async function displayWeather(lat, lon) {
     }
 
     //current weather
-    let currentTemp = document.getElementById("temp");
     currentTemperature = Math.round(response.current.temperature_2m);
     currentTemp.innerHTML = `${currentTemperature}`;
+    tempUnit.innerHTML = `°C`;
 
     //current wind
     let wind = document.getElementById("wind");
@@ -83,7 +87,6 @@ async function displayWeather(lat, lon) {
     humidity.innerHTML = `<i class="fa-solid fa-droplet" style="color: #74C0FC;"></i> ${response.current.relative_humidity_2m} %`;
 
     //forecast
-    console.log(response);
     let forecast = document.getElementById("forecast-weather-day");
     let forecastData = response.daily;
     let tempMax = forecastData.temperature_2m_max;
@@ -117,6 +120,7 @@ async function displayWeather(lat, lon) {
 function searchButton(event) {
   event.preventDefault();
   let inputCity = document.getElementById("input-city").value;
+  toggle.checked = false;
   displayCity(inputCity);
 }
 
@@ -124,6 +128,7 @@ function searchButton(event) {
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
+  toggle.checked = false;
   displayWeather(lat, lon);
 }
 
@@ -133,6 +138,29 @@ function changeCurrent(event) {
 }
 
 displayCity("Australia");
+
+// Change to Fahrenheit
+function displayFahrenheit() {
+  let temp = parseFloat(currentTemp.innerHTML); // Use parseFloat to handle numerical values
+  let fahrenheit = (temp * 9) / 5 + 32;
+  currentTemp.innerHTML = Math.round(fahrenheit);
+  tempUnit.innerHTML = `°F`; // Corrected to Math.round
+}
+
+let toggle = document.querySelector(".toggle");
+
+function handleToggleChange(event) {
+  if (event.target.checked) {
+    displayFahrenheit(event); // Convert temperature if checked
+  } else {
+    let temp = parseFloat(currentTemp.innerHTML);
+    let celsius = ((temp - 32) * 5) / 9;
+    currentTemp.innerHTML = Math.round(celsius);
+    tempUnit.innerHTML = `°C`; // Convert back to Celsius if unchecked
+  }
+}
+
+toggle.addEventListener("change", handleToggleChange);
 
 //wmo weather code image
 let wmo = {
