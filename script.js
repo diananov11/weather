@@ -4,7 +4,7 @@ function greeting() {
   let p = document.getElementById("greetings");
   p.innerHTML = `Here is how your day look like ${nameUser}!!✨👋`;
 }
-setTimeout(greeting, 1200);
+setTimeout(greeting, 2000);
 
 // set date-time
 function dateTime() {
