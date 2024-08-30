@@ -20,7 +20,7 @@
 <body>
   <div class="container">
     <!-- header kiri -->
-    <div class="header">
+    <section class="header">
       <header>
         <p id="date-time" class="date-time"></p>
         <p id="greetings"></p>
@@ -35,18 +35,18 @@
           </label>
         </div>
       </div>
-    </div>
+    </section>
     <main>
       <!-- bagian search -->
-      <div class="input-form">
+      <section class="input-form">
         <form>
           <input type="search" placeholder="Search city" name="input-city" id="input-city" autocomplete="off">
           <input type="submit" value="Search" id="submit-button" class="button" onclick="searchButton(event)">
           <button class="button hithere" onclick="changeCurrent(event)">Your Location📍</button>
         </form>
-      </div>
+      </section>
       <!-- Bagian Weather bawah background hitam -->
-      <div class="weather">
+      <section class="weather">
         <div class="current-weather-container">
           <p id="today"></p>
           <div class="current-weather">
@@ -64,7 +64,7 @@
         </div>
         <!-- bagian forecast -->
         <div class="forecast-weather-day" id="forecast-weather-day"></div>
-      </div>
+      </section>
     </main>
   </div>
   <script src="script.js"></script>
